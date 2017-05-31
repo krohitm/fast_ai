@@ -29,6 +29,7 @@ class Vgg16():
 
     def __init__(self):
         self.FILE_PATH = 'http://files.fast.ai/models/'
+        #self.FILE_PATH = '/data0/krohitm/repo/fast_ai/deeplearning1/nbs/intel/data/cervical/results/'
         self.create()
         self.get_classes()
 
@@ -78,6 +79,7 @@ class Vgg16():
         model.add(Dense(1000, activation='softmax'))
 
         fname = 'vgg16.h5'
+        #fname = 'ft1.h5'
         model.load_weights(get_file(fname, self.FILE_PATH+fname, cache_subdir='models'))
 
 
